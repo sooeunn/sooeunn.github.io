@@ -2,10 +2,25 @@
 <html>
 <head>
 
+  <style>
+    /* TODO: Instead of having a background color, change it to an image */
+    body {
+      background-color: blue
+    }
+    h1 {
+      color: white
+    }
+    p {
+      color: red
+    }
+    .website-title {
+      color:coral
+    }
+  </style>
 </head>
 
-<body>
-<h1>Skateboarding</h1>
+<body id="bodyTag">
+<h1 class="website-title">Skateboarding</h1>
 <p>This website is all about what you need for skateboarding. Made by Josh Kim</p>
 <h1>Skate Decks</h1>
 <image  src="skatedeck.jpg"  width="600" height="400"></image>
@@ -25,11 +40,33 @@
 
 <p>Another thing I reccomend you get is a skate tool. Although it isn't mandatory, but I'd rather get this than have to carry around 3 different sized wrenches, 1 screwdriver, and 1 size of Allen key. The nice thing is a skate tool has all of these int oone conveient and easy to carry tool.</p>
 
+<input type="button" onClick="addOne()" value="Click Me to add one!" />
+<input type="text" id="textBox" value="0" />
+<input type="button" onClick="changeBackgroundColor()" value="Click me to change the background color" />
+<input type="text" id="colorBox" value="white" />
+<!-- TODO: Add a video of how to make a skateboard -->
+
 <script>
   /* TODO: Make a button that plays a skateboard sound effect */
- function makealert() {
-     alert("")
- }
+  function makealert() {
+      alert("")
+  }
+
+  /* TODO: Fix this function so that instead of appending 1, it adds it */
+  /* Hint, you might need to change the type of currentValue from string to something else */
+  function addOne() {
+
+    var currentValue = document.getElementById("textBox").value;
+    currentValue = currentValue + 1;
+    document.getElementById("textBox").value = currentValue;
+  }
+
+  /* TODO: Update this function so that it also changes the colors of the h1 tags */
+  function changeBackgroundColor() {
+    var color = document.getElementById("colorBox").value;
+    var bodyElement = document.getElementsByTagName("body")[0]
+    bodyElement.style.backgroundColor = color
+  }
 </script>
 
 </body>
